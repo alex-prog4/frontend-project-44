@@ -1,18 +1,7 @@
 #!/usr/bin/env node
 import {name, generateQuestion, interfaceBrainGames} from './../src/index.js';
 
-const parity = (number) => {
-	if (number % 2 === 0) {
-		return 'yes';
-	} else {
-		return 'no';
-	};
-};
-
 const compareAnswer = (answerUser, answerProgram) => {
-    if (answerUser !== 'yes' && answerUser !== 'no') {
-		return false;
-	};
 	const resultCompare = (answerProgram === answerUser) ? true: false;
 	const wrongAnswer = (!resultCompare) ? answerUser: 0;
 	const correctAnswer = (!resultCompare) ? answerProgram: 0;
@@ -27,20 +16,31 @@ const generateNumber = () => {
 	return question;
 };
 
-const taskBrainGame = 'Answer "yes" if the number is even, otherwise answer "no".';
+const generateOperationWithNumber = (firstNumber, secondNumber) => {
+	const question = Math.floor(Math.random() * 2);
+	switch (question) {
+		case 0: return ['+', firstNumber + secondNumber];
+		case 1: return ['-', firstNumber - secondNumber];
+		case 2: return ['*', firstNumber * secondNumber];
+		default: return ['+', firstNumber + secondNumber];
+	}
+};
+
+const taskBrainGame = 'What is the result of the expression?';
 const nameUser = name(taskBrainGame);
 let round = 0;
 let nextRound = true;
 
 while (round < 3 && nextRound) {
-	let number = generateNumber();
-	let task = `${number}`;
+	let firstNumber = generateNumber();
+	let secondNumber = generateNumber();
+	let operationWithNumber = generateOperationWithNumber(firstNumber, secondNumber);
+	let task = `${firstNumber} ${operationWithNumber[0]} ${secondNumber}`;
 	nextRound = interfaceBrainGames(
 		compareAnswer(
 			generateQuestion(
 				task),
-			parity(
-				number)),
+			`${operationWithNumber[1]}`),
 		round,
 		nameUser
 	);
