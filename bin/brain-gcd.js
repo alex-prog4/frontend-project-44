@@ -29,6 +29,7 @@ while (round < 3 && nextRound) {
   const firstNumber = generateNumber();
   const secondNumber = generateNumber();
   const task = `${firstNumber} ${secondNumber}`;
-  nextRound = interfaceBrainGames(compareAnswer(generateQuestion(task), gCD(firstNumber, secondNumber)), round, nameUser);
+  const resultCompare = compareAnswer(generateQuestion(task), gCD(firstNumber, secondNumber));
+  nextRound = interfaceBrainGames(resultCompare, round, nameUser);
   round += 1;
 }

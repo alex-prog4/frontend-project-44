@@ -30,6 +30,7 @@ let nextRound = true;
 while (round < 3 && nextRound) {
   const number = generateNumber();
   const task = `${number}`;
-  nextRound = interfaceBrainGames(compareAnswer(generateQuestion(task), controlPrime(number)), round, nameUser);
+  const resultCompare = compareAnswer(generateQuestion(task), controlPrime(number));
+  nextRound = interfaceBrainGames(resultCompare, round, nameUser);
   round += 1;
 }

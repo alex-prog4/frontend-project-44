@@ -12,7 +12,7 @@ const generateNumber = () => {
   return question;
 };
 const generateOperationWithNumber = (firstNumber, secondNumber) => {
-  const question = Math.floor(Math.random() * 4);
+  const question = Math.floor(Math.random() * 3);
   switch (question) {
     case 0: return ['+', firstNumber + secondNumber];
     case 1: return ['-', firstNumber - secondNumber];
@@ -29,6 +29,7 @@ while (round < 3 && nextRound) {
   const secondNumber = generateNumber();
   const operationWithNumber = generateOperationWithNumber(firstNumber, secondNumber);
   const task = `${firstNumber} ${operationWithNumber[0]} ${secondNumber}`;
-  nextRound = interfaceBrainGames(compareAnswer(generateQuestion(task), `${operationWithNumber[1]}`), round, nameUser);
+  const resultCompare = compareAnswer(generateQuestion(task), `${operationWithNumber[1]}`);
+  nextRound = interfaceBrainGames(resultCompare, round, nameUser);
   round += 1;
 }

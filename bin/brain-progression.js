@@ -28,14 +28,18 @@ const generateProgression = (firstNumberProgression, stepProgression) => {
   }
   return [task, `${lostNumber}`];
 };
+const stepProgression = () => {
+  const step = generateNumber(10);
+  return (step === 0) ? 1 : step;
+};
 const taskBrainGame = 'What number is missing in the progression?';
 const nameUser = name(taskBrainGame);
 let round = 0;
 let nextRound = true;
 while (round < 3 && nextRound) {
   const firstNumberProgression = generateNumber(100);
-  const stepProgression = generateNumber(10);
-  const task = generateProgression(firstNumberProgression, (stepProgression === 0) ? 1 : stepProgression);
-  nextRound = interfaceBrainGames(compareAnswer(generateQuestion(task[0]), task[1]), round, nameUser);
+  const task = generateProgression(firstNumberProgression, stepProgression());
+  const resultCompare = compareAnswer(generateQuestion(task[0]), task[1]);
+  nextRound = interfaceBrainGames(resultCompare, round, nameUser);
   round += 1;
 }

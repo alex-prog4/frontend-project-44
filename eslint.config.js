@@ -4,5 +4,5 @@ export default [
       semi: "error",
       "prefer-const": "error"
     }
-  };
+  }
 ];
