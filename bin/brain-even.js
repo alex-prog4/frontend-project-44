@@ -25,6 +25,6 @@ while (round < 3 && nextRound) {
   const number = generateNumber();
   const task = `${number}`;
   const resultCompare = compareAnswer(generateQuestion(task), parity(number));
-  nextRound = interfaceBrainGames(resultCompare, round,	nameUser);
+  nextRound = interfaceBrainGames(resultCompare, round, nameUser);
   round += 1;
 }
