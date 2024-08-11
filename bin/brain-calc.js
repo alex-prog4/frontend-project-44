@@ -3,10 +3,9 @@ import { name, generateQuestion, interfaceBrainGames } from '../src/index.js';
 
 const compareAnswer = (answerUser, answerProgram) => {
   if (answerUser === answerProgram) {
-    return [true, 0, 0] 
-  } else {
-    return [false, answerUser, answerProgram];
+    return [true, 0, 0]; 
   }
+  return [false, answerUser, answerProgram];
 };
 const generateNumber = () => {
   const question = Math.floor(Math.random() * 100);
