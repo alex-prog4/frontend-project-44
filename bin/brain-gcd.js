@@ -21,6 +21,9 @@ const compareAnswer = (answerUser, answerProgram) => {
 
 const generateNumber = () => {
 	const question = Math.floor(Math.random() * 100);
+	if (question === 0) {
+		return 1;
+	}
 	return question;
 };
 
