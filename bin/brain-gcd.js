@@ -2,7 +2,7 @@
 import { name, generateQuestion, interfaceBrainGames } from '../src/index.js';
 
 const gCD = (firstNumber, secondNumber) => {
-  const result = '';
+  let result = '';
   for (let i = Math.min(firstNumber, secondNumber); i > 0; i -= 1) {
     if ((firstNumber % i === 0) && (secondNumber % i === 0)) {
       result += `${i}`;
