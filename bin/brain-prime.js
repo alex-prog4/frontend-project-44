@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { name, generateQuestion, interfaceBrainGames } from './../src/index.js';
+import { name, generateQuestion, interfaceBrainGames } from '../src/index.js';
 
 const controlPrime = (number) => {
   let primeControl = 0;
@@ -7,19 +7,17 @@ const controlPrime = (number) => {
     if (number % i === 0) {
       primeControl += 1;
     }
-  };
+  }
   if (primeControl === 2) {
     return 'yes';
-  } else {
-    return 'no';
   }
+  return 'no';
 };
 const compareAnswer = (answerUser, answerProgram) => {
   if (answerUser === answerProgram) {
-    return [true, 0, 0]
-  } else {
-    return [false, answerUser, answerProgram];
+    return [true, 0, 0];
   }
+  return [false, answerUser, answerProgram];
 };
 const generateNumber = () => {
   const question = Math.floor(Math.random() * 100);
@@ -32,6 +30,9 @@ let nextRound = true;
 while (round < 3 && nextRound) {
   const number = generateNumber();
   const task = `${number}`;
-  nextRound = interfaceBrainGames(compareAnswer(generateQuestion(task), controlPrime(number)), round, nameUser);
+  nextRound = interfaceBrainGames(compareAnswer(generateQuestion(task),
+	                          controlPrime(number)),
+	                          round,
+	                          nameUser);
   round += 1;
-};
+}
