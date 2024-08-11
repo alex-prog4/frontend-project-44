@@ -3,7 +3,7 @@ import { name, generateQuestion, interfaceBrainGames } from '../src/index.js';
 
 const compareAnswer = (answerUser, answerProgram) => {
   if (answerUser === answerProgram) {
-    return [true, 0, 0]; 
+    return [true, 0, 0];
   }
   return [false, answerUser, answerProgram];
 };

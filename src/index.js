@@ -23,5 +23,5 @@ const interfaceBrainGames = ([controlAnswer, wrongAnswer, correctAnswer], round,
   console.log(`'${wrongAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
 Let's try again, ${nameUser}!`);
   return false;
-}
+};
 export { name, generateQuestion, interfaceBrainGames };

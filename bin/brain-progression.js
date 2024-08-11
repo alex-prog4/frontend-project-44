@@ -35,10 +35,7 @@ let nextRound = true;
 while (round < 3 && nextRound) {
   const firstNumberProgression = generateNumber(100);
   const stepProgression = generateNumber(10);
-  const task = generateProgression(firstNumberProgression,
-	                           (stepProgression === 0) ? 1 : stepProgression);
-  nextRound = interfaceBrainGames(compareAnswer(generateQuestion(task[0]), task[1]),
-	                          round,
-	                          nameUser);
+  const task = generateProgression(firstNumberProgression, (stepProgression === 0) ? 1 : stepProgression);
+  nextRound = interfaceBrainGames(compareAnswer(generateQuestion(task[0]), task[1]), round, nameUser);
   round += 1;
 }

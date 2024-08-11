@@ -4,9 +4,8 @@ import { name, generateQuestion, interfaceBrainGames } from '../src/index.js';
 const parity = (number) => {
   if (number % 2 === 0) {
     return 'yes';
-  } else {
-    return 'no';
   }
+  return 'no';
 };
 const compareAnswer = (answerUser, answerProgram) => {
   if (answerUser === answerProgram) {
@@ -25,9 +24,6 @@ let nextRound = true;
 while (round < 3 && nextRound) {
   const number = generateNumber();
   const task = `${number}`;
-  nextRound = interfaceBrainGames(compareAnswer(generateQuestion(task),
-	                          parity(number)),
-	                          round,
-	                          nameUser);
+  nextRound = interfaceBrainGames(compareAnswer(generateQuestion(task), parity(number)), round, nameUser);
   round += 1;
 }
