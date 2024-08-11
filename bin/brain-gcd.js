@@ -1,6 +1,14 @@
 #!/usr/bin/env node
 import {name, generateQuestion, interfaceBrainGames} from './../src/index.js';
 
+const gCD = (firstNumber, secondNumber) => {
+	for (let i = Math.min(firstNumber, secondNumber); i > 0; i -= 1) {
+		if ((firstNumber % i === 0) && (secondNumber % i === 0)) {
+			return `${i}`;
+		};
+	};
+};
+
 const compareAnswer = (answerUser, answerProgram) => {
 	const resultCompare = (answerProgram === answerUser) ? true: false;
 	const wrongAnswer = (!resultCompare) ? answerUser: 0;
@@ -16,17 +24,7 @@ const generateNumber = () => {
 	return question;
 };
 
-const generateOperationWithNumber = (firstNumber, secondNumber) => {
-	const question = Math.floor(Math.random() * 4);
-	switch (question) {
-		case 0: return ['+', firstNumber + secondNumber];
-		case 1: return ['-', firstNumber - secondNumber];
-		case 2: return ['*', firstNumber * secondNumber];
-		default: return ['*', firstNumber * secondNumber];
-	}
-};
-
-const taskBrainGame = 'What is the result of the expression?';
+const taskBrainGame = 'Find the greatest common divisor of given numbers.';
 const nameUser = name(taskBrainGame);
 let round = 0;
 let nextRound = true;
@@ -34,13 +32,12 @@ let nextRound = true;
 while (round < 3 && nextRound) {
 	let firstNumber = generateNumber();
 	let secondNumber = generateNumber();
-	let operationWithNumber = generateOperationWithNumber(firstNumber, secondNumber);
-	let task = `${firstNumber} ${operationWithNumber[0]} ${secondNumber}`;
+	let task = `${firstNumber} ${secondNumber}`;
 	nextRound = interfaceBrainGames(
 		compareAnswer(
 			generateQuestion(
 				task),
-			`${operationWithNumber[1]}`),
+			gCD(firstNumber, secondNumber)),
 		round,
 		nameUser
 	);
