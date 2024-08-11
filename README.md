@@ -5,3 +5,4 @@
 <script src="https://github.com/alex-prog4/frontend-project-44/blob/main/democalc.cast" async></script>
 <script src="https://github.com/alex-prog4/frontend-project-44/blob/main/demogcd.cast" async></script>
 <script src="https://github.com/alex-prog4/frontend-project-44/blob/main/demoprogression.cast" async></script>
+<script src="https://github.com/alex-prog4/frontend-project-44/blob/main/demoprime.cast" async></script>
