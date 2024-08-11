@@ -18,12 +18,12 @@ const interfaceBrainGames = ([controlAnswer, wrongAnswer, correctAnswer], round,
     if (controlAnswer) {
         console.log('Correct!');
         if (round === 2) {
-            console.log(`Congratulations, ${nameUser}`);
+            console.log(`Congratulations, ${nameUser}!`);
         };
         return true;
     } else {
         console.log(`'${wrongAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
-Let's try again, ${nameUser}`);
+Let's try again, ${nameUser}.`);
         return false;
     };
 };
