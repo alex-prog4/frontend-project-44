@@ -23,7 +23,7 @@ const interfaceBrainGames = ([controlAnswer, wrongAnswer, correctAnswer], round,
         return true;
     } else {
         console.log(`'${wrongAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
-Let's try again, ${nameUser}.`);
+Let's try again, ${nameUser}!`);
         return false;
     };
 };
