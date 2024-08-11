@@ -30,8 +30,8 @@ let round = 0;
 let nextRound = true;
 
 while (round < 3 && nextRound) {
-	let number = generateNumber();
-	let task = `${number}`;
+	const number = generateNumber();
+	const task = `${number}`;
 	nextRound = interfaceBrainGames(
 		compareAnswer(
 			generateQuestion(

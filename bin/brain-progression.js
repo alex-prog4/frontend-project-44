@@ -40,9 +40,9 @@ let round = 0;
 let nextRound = true;
 
 while (round < 3 && nextRound) {
-	let firstNumberProgression = generateNumber(100);
-	let stepProgression = generateNumber(10);
-	let task = generateProgression(firstNumberProgression, (stepProgression === 0) ? 1: stepProgression);
+	const firstNumberProgression = generateNumber(100);
+	const stepProgression = generateNumber(10);
+	const task = generateProgression(firstNumberProgression, (stepProgression === 0) ? 1: stepProgression);
 	nextRound = interfaceBrainGames(
 		compareAnswer(
 			generateQuestion(

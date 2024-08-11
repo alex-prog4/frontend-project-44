@@ -33,9 +33,9 @@ let round = 0;
 let nextRound = true;
 
 while (round < 3 && nextRound) {
-	let firstNumber = generateNumber();
-	let secondNumber = generateNumber();
-	let task = `${firstNumber} ${secondNumber}`;
+	const firstNumber = generateNumber();
+	const secondNumber = generateNumber();
+	const task = `${firstNumber} ${secondNumber}`;
 	nextRound = interfaceBrainGames(
 		compareAnswer(
 			generateQuestion(
