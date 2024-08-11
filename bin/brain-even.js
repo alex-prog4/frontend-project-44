@@ -10,9 +10,6 @@ const parity = (number) => {
 };
 
 const compareAnswer = (answerUser, answerProgram) => {
-    if (answerUser !== 'yes' && answerUser !== 'no') {
-		return false;
-	};
 	const resultCompare = (answerProgram === answerUser) ? true: false;
 	const wrongAnswer = (!resultCompare) ? answerUser: 0;
 	const correctAnswer = (!resultCompare) ? answerProgram: 0;
