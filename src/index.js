@@ -19,7 +19,7 @@ const compareAnswer = (answerUser, answerProgram) => {
   return false;
 };
 const interfaceBrainGames = (gameDiscription, generateTaskFunction) => {
-  const nameUser = greeting(gameDiscription)
+  const nameUser = greeting(gameDiscription);
   let numberOfRounds = 3;
   let chekingAnswer = true;
   while (numberOfRounds > 0 && chekingAnswer) {
@@ -32,10 +32,11 @@ const interfaceBrainGames = (gameDiscription, generateTaskFunction) => {
         console.log(`Congratulations, ${nameUser}!`);
       }
     } else {
-    console.log(`'${answerUser}' is wrong answer ;(. Correct answer was '${answerProgram}'.
+      console.log(`'${answerUser}' is wrong answer ;(. Correct answer was '${answerProgram}'.
 Let's try again, ${nameUser}!`);
     }
     numberOfRounds -= 1;
   }
 };
 export default interfaceBrainGames;
+

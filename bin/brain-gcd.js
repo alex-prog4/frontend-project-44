@@ -20,3 +20,4 @@ const generateTaskGCD = () => {
   return [`${firstNumber} ${secondNumber}`, `${1}`];
 };
 interfaceBrainGames(gameDiscription, generateTaskGCD);
+
