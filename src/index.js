@@ -1,27 +1,41 @@
 import readlineSync from 'readline-sync';
 
-const name = (taskBrainGame) => {
+const greeting = (gameDiscription) => {
   console.log('Welcome to the Brain Games!');
   const nameUser = readlineSync.question('May I have your name?');
   console.log(`Hello, ${nameUser}!`);
-  console.log(`${taskBrainGame}`);
+  console.log(`${gameDiscription}`);
   return nameUser;
 };
-const generateQuestion = (question) => {
-  const answer = readlineSync.question(`Question: ${question}
+const generateQuestion = (taskGame) => {
+  const answer = readlineSync.question(`Question: ${taskGame}
 You answear:`);
   return answer;
 };
-const interfaceBrainGames = ([controlAnswer, wrongAnswer, correctAnswer], round, nameUser) => {
-  if (controlAnswer) {
-    console.log('Correct!');
-    if (round === 2) {
-      console.log(`Congratulations, ${nameUser}!`);
-    }
+const compareAnswer = (answerUser, answerProgram) => {
+  if (answerUser === answerProgram) {
     return true;
   }
-  console.log(`'${wrongAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
-Let's try again, ${nameUser}!`);
   return false;
 };
-export { name, generateQuestion, interfaceBrainGames };
+const interfaceBrainGames = (gameDiscription, generateTaskFunction) => {
+  const nameUser = greeting(gameDiscription)
+  let numberOfRounds = 3;
+  let chekingAnswer = true;
+  while (numberOfRounds > 0 && chekingAnswer) {
+    const [taskGame, answerProgram] = generateTaskFunction();
+    const answerUser = generateQuestion(taskGame);
+    chekingAnswer = compareAnswer(answerUser, answerProgram);
+    if (chekingAnswer) {
+      console.log('Correct!');
+      if (numberOfRounds === 1) {
+        console.log(`Congratulations, ${nameUser}!`);
+      }
+    } else {
+    console.log(`'${answerUser}' is wrong answer ;(. Correct answer was '${answerProgram}'.
+Let's try again, ${nameUser}!`);
+    }
+    numberOfRounds -= 1;
+  }
+};
+export default interfaceBrainGames;

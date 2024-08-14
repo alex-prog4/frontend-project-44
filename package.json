@@ -1,8 +1,8 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/alex-prog4/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/alex-prog4/frontend-project-44/actions)",
-  "main": "index.js",
+  "description": "education project - Brain Games (even, calc, gcd, progression,prime)",
+  "main": "src/index.js",
   "type": "module",
   "bin": {
     "brain-games": "bin/brain-games.js",
