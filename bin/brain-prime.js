@@ -20,4 +20,3 @@ const generateTaskPrime = () => {
   return [`${number}`, 'no'];
 };
 interfaceBrainGames(gameDiscription, generateTaskPrime);
-

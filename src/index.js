@@ -39,4 +39,3 @@ Let's try again, ${nameUser}!`);
   }
 };
 export default interfaceBrainGames;
-

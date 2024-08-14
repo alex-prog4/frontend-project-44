@@ -18,4 +18,3 @@ const generateTaskCalc = () => {
   }
 };
 interfaceBrainGames(gameDiscription, generateTaskCalc);
-

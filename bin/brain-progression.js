@@ -29,4 +29,3 @@ const generateTaskProgression = () => {
   return [progression, `${lostNumber}`];
 };
 interfaceBrainGames(gameDiscription, generateTaskProgression);
-

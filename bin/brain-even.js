@@ -14,4 +14,3 @@ const generateTaskEven = () => {
   return [`${number}`, answerProgram];
 };
 interfaceBrainGames(gameDiscription, generateTaskEven);
-
