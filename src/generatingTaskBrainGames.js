@@ -44,7 +44,7 @@ const getTaskGCD = () => {
 const getTaskProgression = () => {
   const quantityProgression = getRandomNumber(5, 10);
   const indexLostNumber = getRandomNumber(0, quantityProgression);
-  const stepProgression = generateStepProgression(1, 10);
+  const stepProgression = getRandomNumber(1, 10);
   let numberProgression = getRandomNumber();
   let progression = '';
   let answerProgram = 0; //lost number progression
