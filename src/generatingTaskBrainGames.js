@@ -25,8 +25,8 @@ const getTaskCalc = () => {
       case '-': return firstNumber - secondNumber;
       case '*': return firstNumber * secondNumber;
       default: return 0;
-    };
-  }
+    }
+  };
   const answerProgram = getResult(selectOperator);
   return [`${firstNumber} ${selectOperator} ${secondNumber}`, `${answerProgram}`];
 };
@@ -74,5 +74,4 @@ const getTaskPrime = () => {
   }
   return [`${number}`, answerProgram];
 };
-
 export { getTaskEven, getTaskCalc, getTaskGCD, getTaskProgression, getTaskPrime };
