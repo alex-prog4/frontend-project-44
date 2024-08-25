@@ -15,10 +15,12 @@ You answear:`);
     } else {
       console.log(`'${answerUser}' is wrong answer ;(. Correct answer was '${answerProgram}'.
 Let's try again, ${nameUser}!`);
+      return false;
     }
     if (i === 1) {
       console.log(`Congratulations, ${nameUser}!`);
     }
   }
+  return true;
 };
 export default interfaceBrainGames;
