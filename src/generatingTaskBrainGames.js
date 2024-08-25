@@ -75,5 +75,5 @@ const getTaskPrime = () => {
   return [`${number}`, answerProgram];
 };
 export {
-    getTaskEven, getTaskCalc, getTaskGCD, getTaskProgression, getTaskPrime
+  getTaskEven, getTaskCalc, getTaskGCD, getTaskProgression, getTaskPrime,
 };
