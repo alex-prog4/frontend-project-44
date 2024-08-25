@@ -18,16 +18,17 @@ const getTaskCalc = () => {
   const secondNumber = getRandomNumber();
   const operators = ['+', '-', '*'];
   const operatorIndex = getRandomNumber(1, operators.length) - 1;
-  const operator = operators[operatorIndex];
-  const getResult = (operator) => { 
-    switch (operator) {
+  const selectOperator = operators[operatorIndex];
+  const getResult = (operation) => {
+    switch (operation) {
       case '+': return firstNumber + secondNumber;
       case '-': return firstNumber - secondNumber;
       case '*': return firstNumber * secondNumber;
-    }
+      default: return 0;
+    };
   }
-  const answerProgram = getResult(operator);
-  return [`${firstNumber} ${operator} ${secondNumber}`, `${answerProgram}`];
+  const answerProgram = getResult(selectOperator);
+  return [`${firstNumber} ${selectOperator} ${secondNumber}`, `${answerProgram}`];
 };
 const getTaskGCD = () => {
   const firstNumber = getRandomNumber();
@@ -47,7 +48,7 @@ const getTaskProgression = () => {
   const stepProgression = getRandomNumber(1, 10);
   let numberProgression = getRandomNumber();
   let progression = '';
-  let answerProgram = 0; //lost number progression
+  let answerProgram = 0;
   for (let i = 0; i < quantityProgression; i += 1) {
     if (i === indexLostNumber) {
       progression += '.. ';
@@ -73,4 +74,5 @@ const getTaskPrime = () => {
   }
   return [`${number}`, answerProgram];
 };
+
 export { getTaskEven, getTaskCalc, getTaskGCD, getTaskProgression, getTaskPrime };
